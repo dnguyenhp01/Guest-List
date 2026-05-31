@@ -1,5 +1,4 @@
 #include "GuestList.h"
-#include<iostream>
 
 void GuestList::addGuest(Guest& guest)
 {

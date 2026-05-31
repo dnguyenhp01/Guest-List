@@ -7,7 +7,6 @@
 // 3. Let's get started!
 // 4. First, I will make a class called Guest that will be the based for the guest list.
 
-#include <iostream>
 #include "GuestList.h"
 int main()
 {
