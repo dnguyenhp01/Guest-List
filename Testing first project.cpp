@@ -8,38 +8,55 @@
 // 4. First, I will make a class called Guest that will be the based for the guest list.
 
 #include "GuestList.h"
+#include <chrono>
+#include <thread>
+#include <limits>
 int main()
 {
 	GuestList myList;
 	bool running = true;
 	std::string choose;
 	int option;
+
 	while (running)
 	{
 		std::cout << " Menu\n";
 		std::cout << " Pick from the options below\n";
 		std::cout << " Choose your actions: \n 1. Add Guest\n 2. See Guest List\n 3. Remove Guest \n 4. Quit\n";
+		std::cout << "Options: ";
+
 		std::cin >> choose;
 		option = std::stoi(choose);
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-		if (option == 1)
+		switch (option)
+		{
+		case 1:
 		{
 			Guest guest;
 			myList.addGuest(guest);
+			break;
 		}
-		else if (option == 2)
+
+		case 2:
 		{
 			myList.displayGuests();
+			break;
 		}
-		else if (option == 3)
+
+		case 3:
 		{
 			myList.removeGuest();
+			break;
 		}
-		else if (option == 4)
-		{
+
+		case 4:
 			running = false;
+			break;
+
+		default:
+			std::cout << "Invalid option.\n";
+			break;
 		}
 	}
 }
-
-

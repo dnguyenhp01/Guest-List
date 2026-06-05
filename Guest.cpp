@@ -10,4 +10,7 @@ std::string Guest::setName(std::string name)
 	name_ = name;
 	return name;
 }
-
+int Guest::getExtra() const
+{
+	return extraCounts_;
+}
